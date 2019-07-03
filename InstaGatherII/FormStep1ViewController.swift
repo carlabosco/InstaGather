@@ -10,6 +10,11 @@ import UIKit
 
 class FormStep1ViewController: UIViewController {
 
+    
+    @IBOutlet weak var EventFieldLabel: UILabel!
+    @IBOutlet weak var EventField: UITextField!
+    @IBOutlet weak var NextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

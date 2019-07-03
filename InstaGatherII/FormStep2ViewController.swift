@@ -9,13 +9,35 @@
 import UIKit
 
 class FormStep2ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var dateField: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        
+        dateField.inputView = datePicker
+        
+        datePicker?.addTarget(self, action: #selector(FormStep2ViewController.dateChanged(datePicker:)), for: .valueChanged)
 
         // Do any additional setup after loading the view.
     }
     
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        
+        dateField.text = dateFormatter.string(from: datePicker.date)
+        
+        view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

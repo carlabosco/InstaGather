@@ -76,6 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="VTd-E5-3fA"/>
                     </view>
                     <navigationItem key="navigationItem" id="lvc-ON-Nnd"/>
+                    <connections>
+                        <outlet property="EventField" destination="goI-Wz-97k" id="6SB-mX-Gb1"/>
+                        <outlet property="EventFieldLabel" destination="PNh-JP-TyV" id="f9r-0v-R3K"/>
+                        <outlet property="NextButton" destination="3Ex-Xm-lkc" id="Z2K-mK-5iO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNf-nj-yOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,20 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-MC-0rh">
-                                <rect key="frame" x="20" y="209" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="y8y-2C-zho">
-                                <rect key="frame" x="20" y="292" width="374" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="583813007.25931001">
-                                    <!--2019-07-03 02:16:47 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw3-nG-EBQ">
-                                <rect key="frame" x="20" y="538" width="374" height="75"/>
+                                <rect key="frame" x="20" y="320" width="374" height="75"/>
                                 <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="yOv-jC-UPH"/>
@@ -115,22 +108,28 @@
                                     <segue destination="9A6-OK-82c" kind="show" id="7Ez-Ev-XRx"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When are you meeting?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-JD-OfF">
+                                <rect key="frame" x="20" y="254" width="374" height="36"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8eg-MC-0rh" firstAttribute="top" secondItem="al2-it-gZR" secondAttribute="top" constant="121" id="4im-Y3-Dcd"/>
-                            <constraint firstItem="y8y-2C-zho" firstAttribute="leading" secondItem="al2-it-gZR" secondAttribute="leading" constant="20" id="Agw-r2-qN4"/>
+                            <constraint firstItem="GOo-JD-OfF" firstAttribute="leading" secondItem="al2-it-gZR" secondAttribute="leading" constant="20" id="4fL-Er-Jck"/>
+                            <constraint firstItem="Vw3-nG-EBQ" firstAttribute="top" secondItem="GOo-JD-OfF" secondAttribute="bottom" constant="30" id="ItO-UV-4s0"/>
                             <constraint firstItem="al2-it-gZR" firstAttribute="trailing" secondItem="Vw3-nG-EBQ" secondAttribute="trailing" constant="20" id="Zmj-9w-ofH"/>
-                            <constraint firstItem="al2-it-gZR" firstAttribute="trailing" secondItem="y8y-2C-zho" secondAttribute="trailing" constant="20" id="eXH-qI-JzN"/>
-                            <constraint firstItem="Vw3-nG-EBQ" firstAttribute="top" secondItem="y8y-2C-zho" secondAttribute="bottom" constant="30" id="hYi-LH-7v6"/>
-                            <constraint firstItem="y8y-2C-zho" firstAttribute="top" secondItem="8eg-MC-0rh" secondAttribute="bottom" constant="47" id="jAb-ts-rJw"/>
+                            <constraint firstItem="GOo-JD-OfF" firstAttribute="top" secondItem="al2-it-gZR" secondAttribute="top" constant="166" id="dD0-7J-kWN"/>
                             <constraint firstItem="Vw3-nG-EBQ" firstAttribute="leading" secondItem="al2-it-gZR" secondAttribute="leading" constant="20" id="sSX-Eq-JzB"/>
-                            <constraint firstItem="8eg-MC-0rh" firstAttribute="leading" secondItem="al2-it-gZR" secondAttribute="leading" constant="20" id="w9F-1Z-xir"/>
-                            <constraint firstItem="al2-it-gZR" firstAttribute="trailing" secondItem="8eg-MC-0rh" secondAttribute="trailing" constant="20" id="xHo-gu-eQr"/>
+                            <constraint firstItem="al2-it-gZR" firstAttribute="trailing" secondItem="GOo-JD-OfF" secondAttribute="trailing" constant="20" id="u4e-WF-kMQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="al2-it-gZR"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cwh-sV-EgV"/>
+                    <connections>
+                        <outlet property="dateField" destination="GOo-JD-OfF" id="FNG-JJ-F5c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9L2-Dl-ikh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
