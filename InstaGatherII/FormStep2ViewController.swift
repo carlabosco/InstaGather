@@ -36,6 +36,7 @@ class FormStep2ViewController: UIViewController {
         
         dateField.text = dateFormatter.string(from: datePicker.date)
         
+        
         view.endEditing(true)
     }
 
