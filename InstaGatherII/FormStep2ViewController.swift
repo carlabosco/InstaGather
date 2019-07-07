@@ -25,8 +25,9 @@ class FormStep2ViewController: UIViewController {
         
         datePicker?.addTarget(self, action: #selector(FormStep2ViewController.dateChanged(datePicker:)), for: .valueChanged)
 
-        // Do any additional setup after loading the view.
     }
+    
+    var selectedDate = ""
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -35,10 +36,20 @@ class FormStep2ViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         dateField.text = dateFormatter.string(from: datePicker.date)
+        selectedDate = dateField.text!
         
-        
-        view.endEditing(true)
     }
+    
+    
+    
+    @IBAction func endDateSelection(_ sender: UIButton) {
+        view.endEditing(true)
+        print(selectedDate)
+    }
+    
+    
+
+    
 
     /*
     // MARK: - Navigation

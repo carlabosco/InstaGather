@@ -34,10 +34,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="183" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-QP-Lfh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get together!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNh-JP-TyV">
                                 <rect key="frame" x="20" y="209" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is the occasion?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goI-Wz-97k">
@@ -84,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNf-nj-yOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="-93"/>
+            <point key="canvasLocation" x="-236.23188405797103" y="-93.080357142857139"/>
         </scene>
         <!--Form Step2 View Controller-->
         <scene sceneID="RTX-RD-ekN">
@@ -105,6 +109,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="endDateSelection:" destination="vep-PE-clc" eventType="touchUpInside" id="1cU-hy-2wG"/>
                                     <segue destination="9A6-OK-82c" kind="show" id="7Ez-Ev-XRx"/>
                                 </connections>
                             </button>
@@ -188,4 +193,7 @@
             <point key="canvasLocation" x="1245" y="-93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="183" width="4642" height="6912"/>
+    </resources>
 </document>
