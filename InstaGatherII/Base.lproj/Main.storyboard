@@ -34,14 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="183" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-QP-Lfh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get together!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNh-JP-TyV">
                                 <rect key="frame" x="20" y="209" width="374" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is the occasion?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goI-Wz-97k">
@@ -52,7 +48,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ex-Xm-lkc">
                                 <rect key="frame" x="20" y="328" width="374" height="75"/>
-                                <color key="backgroundColor" red="0.42468542127112219" green="0.76766969323193879" blue="0.97854598445595853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="5f6-09-Jpy"/>
                                 </constraints>
@@ -64,6 +60,10 @@
                                     <segue destination="vep-PE-clc" kind="show" id="Txy-cG-WiZ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1547" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-QP-Lfh">
+                                <rect key="frame" x="0.0" y="521" width="414" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="446.37681159420293" y="-93.080357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Form Step3 View Controller-->
         <scene sceneID="TPo-6Q-FxF">
             <objects>
-                <viewController id="9A6-OK-82c" sceneMemberID="viewController">
+                <viewController id="9A6-OK-82c" customClass="FormStep3ViewController" customModule="InstaGatherII" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FVM-Mc-gDd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +194,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="183" width="4642" height="6912"/>
+        <image name="1547" width="5000" height="5000"/>
     </resources>
 </document>
