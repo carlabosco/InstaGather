@@ -134,6 +134,7 @@
                     <navigationItem key="navigationItem" id="Cwh-sV-EgV"/>
                     <connections>
                         <outlet property="dateField" destination="GOo-JD-OfF" id="FNG-JJ-F5c"/>
+                        <outlet property="nextButton" destination="Vw3-nG-EBQ" id="s1m-Eg-mmB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9L2-Dl-ikh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,13 +149,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you meeting?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqd-Wz-vJK">
-                                <rect key="frame" x="20" y="209" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-WA-9fs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you meeting?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-WA-9fs">
                                 <rect key="frame" x="20" y="262" width="374" height="36"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -174,19 +169,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NMX-WA-9fs" firstAttribute="top" secondItem="dqd-Wz-vJK" secondAttribute="bottom" constant="17" id="5D4-kl-Xyx"/>
                             <constraint firstItem="y9L-cE-kKo" firstAttribute="top" secondItem="NMX-WA-9fs" secondAttribute="bottom" constant="30" id="Aa4-zH-5fJ"/>
                             <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="y9L-cE-kKo" secondAttribute="trailing" constant="20" id="Boa-sr-aE7"/>
+                            <constraint firstItem="NMX-WA-9fs" firstAttribute="top" secondItem="jxQ-aJ-f3w" secondAttribute="top" constant="174" id="IcR-Ah-eOv"/>
                             <constraint firstItem="NMX-WA-9fs" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="LDL-TG-GJD"/>
-                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="dqd-Wz-vJK" secondAttribute="trailing" constant="20" id="Sai-Il-ry6"/>
                             <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="NMX-WA-9fs" secondAttribute="trailing" constant="20" id="V2X-HR-5NU"/>
-                            <constraint firstItem="dqd-Wz-vJK" firstAttribute="top" secondItem="jxQ-aJ-f3w" secondAttribute="top" constant="121" id="dDc-L4-P3M"/>
                             <constraint firstItem="y9L-cE-kKo" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="ngX-bG-AGO"/>
-                            <constraint firstItem="dqd-Wz-vJK" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="ycM-EH-SDU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxQ-aJ-f3w"/>
                     </view>
                     <navigationItem key="navigationItem" id="zTM-lY-7iX"/>
+                    <connections>
+                        <outlet property="addressField" destination="NMX-WA-9fs" id="1It-hm-Irn"/>
+                        <outlet property="nextButton" destination="y9L-cE-kKo" id="nfR-4X-rXg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5g-Ow-IDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

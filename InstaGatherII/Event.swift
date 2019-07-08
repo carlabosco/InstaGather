@@ -9,5 +9,7 @@
 import UIKit
 
 class Event: NSObject {
-
+    var name: String?
+    var date: String?
+    var address: String?
 }

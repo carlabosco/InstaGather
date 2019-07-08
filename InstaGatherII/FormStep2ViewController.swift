@@ -12,8 +12,11 @@ class FormStep2ViewController: UIViewController {
     
     
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     private var datePicker: UIDatePicker?
+    
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +27,10 @@ class FormStep2ViewController: UIViewController {
         dateField.inputView = datePicker
         
         datePicker?.addTarget(self, action: #selector(FormStep2ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        print(event!.name)
 
     }
-    
-    var selectedDate = ""
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -36,7 +39,7 @@ class FormStep2ViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         dateField.text = dateFormatter.string(from: datePicker.date)
-        selectedDate = dateField.text!
+
         
     }
     
@@ -44,21 +47,14 @@ class FormStep2ViewController: UIViewController {
     
     @IBAction func endDateSelection(_ sender: UIButton) {
         view.endEditing(true)
-        print(selectedDate)
+
     }
     
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.event?.date = dateField.text
+        let step3VC = segue.destination as! FormStep3ViewController
+        step3VC.event = self.event
     }
-    */
+
 
 }

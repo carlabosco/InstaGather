@@ -9,22 +9,18 @@
 import UIKit
 
 class FormStep3ViewController: UIViewController {
+    
+    @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var event: Event?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(event!.name)
+        print(event!.date)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

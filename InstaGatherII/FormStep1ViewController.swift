@@ -11,14 +11,22 @@ import UIKit
 class FormStep1ViewController: UIViewController {
 
     
-    @IBOutlet weak var EventFieldLabel: UILabel!
-    @IBOutlet weak var EventField: UITextField!
-    @IBOutlet weak var NextButton: UIButton!
+    @IBOutlet weak var eventFieldLabel: UILabel!
+    @IBOutlet weak var eventField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.event = Event()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.event?.name = eventField.text
+        let step2VC = segue.destination as! FormStep2ViewController
+        step2VC.event = self.event
     }
     
 
