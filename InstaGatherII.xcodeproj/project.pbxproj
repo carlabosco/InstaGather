@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */; };
 		11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11772F4922D2A93B00733201 /* FormStep3ViewController.swift */; };
 		11989EFB22CC35F500545917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989EFA22CC35F500545917 /* AppDelegate.swift */; };
 		11989F0022CC35F500545917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11989EFE22CC35F500545917 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep4ViewController.swift; sourceTree = "<group>"; };
 		11772F4922D2A93B00733201 /* FormStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep3ViewController.swift; sourceTree = "<group>"; };
 		11989EF722CC35F500545917 /* InstaGatherII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGatherII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11989EFA22CC35F500545917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				11989F0E22CC652C00545917 /* FormStep2ViewController.swift */,
 				11989F1022CC65A200545917 /* Event.swift */,
 				11772F4922D2A93B00733201 /* FormStep3ViewController.swift */,
+				1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */,
 			);
 			path = InstaGatherII;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11989F1122CC65A200545917 /* Event.swift in Sources */,
+				1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */,
 				11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */,
 				11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */,
 				11989EFB22CC35F500545917 /* AppDelegate.swift in Sources */,
