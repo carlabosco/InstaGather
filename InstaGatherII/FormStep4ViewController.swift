@@ -11,15 +11,13 @@ import Contacts
 import ContactsUI
 
 
-class FormStep4ViewController: UIViewController {
+class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     @IBOutlet weak var guestsField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -55,7 +53,9 @@ class FormStep4ViewController: UIViewController {
         picker.dismiss(animated: true)
     }
     
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-        
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        print(contacts)
     }
+    
+    
 }
