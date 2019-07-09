@@ -9,7 +9,10 @@
 import UIKit
 
 class FormStep4ViewController: UIViewController {
-
+    
+    @IBOutlet weak var guestsField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

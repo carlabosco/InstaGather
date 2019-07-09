@@ -11,6 +11,7 @@ import UIKit
 class FormStep3ViewController: UIViewController {
     
     @IBOutlet weak var addressField: UITextField!
+    
     @IBOutlet weak var nextButton: UIButton!
     
     var event: Event?
