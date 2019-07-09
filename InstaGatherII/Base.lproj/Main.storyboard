@@ -223,6 +223,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectContacts:" destination="yIV-oq-iaW" eventType="touchUpInside" id="7gY-le-FwQ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1547" translatesAutoresizingMaskIntoConstraints="NO" id="lrF-8T-7jN">
                                 <rect key="frame" x="0.0" y="481" width="414" height="304"/>

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Contacts
+import ContactsUI
+
 
 class FormStep4ViewController: UIViewController {
     
@@ -20,14 +23,39 @@ class FormStep4ViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectContacts(_ sender: Any) {
+        
+        let entityType = CNEntityType.contacts
+        let authStatus = CNContactStore.authorizationStatus(for: entityType)
+        
+        if authStatus == CNAuthorizationStatus.notDetermined {
+            
+            let contactStore = CNContactStore.init()
+            contactStore.requestAccess(for: entityType, completionHandler: {(success, nil) in
+                if success {
+                    self.openContacts()
+                }
+                else {
+                    print("Not authorized")
+                }
+            })
+        }
+        else if authStatus == CNAuthorizationStatus.authorized {
+            self.openContacts()
+        }
     }
-    */
-
+    
+    func openContacts() {
+        let contactPicker = CNContactPickerViewController.init()
+        contactPicker.delegate = self as?  CNContactPickerDelegate
+        self.present(contactPicker, animated: true, completion: nil)
+    }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        picker.dismiss(animated: true)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        
+    }
 }

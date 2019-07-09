@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049C922D50A08009E1356 /* ContactsUI.framework */; };
+		113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049CB22D50A36009E1356 /* Contacts.framework */; };
 		1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */; };
 		11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11772F4922D2A93B00733201 /* FormStep3ViewController.swift */; };
 		11989EFB22CC35F500545917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989EFA22CC35F500545917 /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		113049C922D50A08009E1356 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		113049CB22D50A36009E1356 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep4ViewController.swift; sourceTree = "<group>"; };
 		11772F4922D2A93B00733201 /* FormStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep3ViewController.swift; sourceTree = "<group>"; };
 		11989EF722CC35F500545917 /* InstaGatherII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGatherII.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */,
+				113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113049C822D50A07009E1356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				113049CB22D50A36009E1356 /* Contacts.framework */,
+				113049C922D50A08009E1356 /* ContactsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11989EEE22CC35F500545917 = {
 			isa = PBXGroup;
 			children = (
 				11989EF922CC35F500545917 /* InstaGatherII */,
 				11989EF822CC35F500545917 /* Products */,
+				113049C822D50A07009E1356 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
