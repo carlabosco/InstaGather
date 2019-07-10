@@ -13,14 +13,14 @@ import ContactsUI
 
 class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
-    @IBOutlet weak var guestsField: UITextField!
+    @IBOutlet weak var whosComingLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-
     @IBAction func selectContacts(_ sender: Any) {
         
         let entityType = CNEntityType.contacts
@@ -56,6 +56,6 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         print(contacts)
     }
+    }
     
-    
-}
+

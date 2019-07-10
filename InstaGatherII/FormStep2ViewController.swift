@@ -27,8 +27,6 @@ class FormStep2ViewController: UIViewController {
         dateField.inputView = datePicker
         
         datePicker?.addTarget(self, action: #selector(FormStep2ViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        print(event!.name)
 
     }
     
