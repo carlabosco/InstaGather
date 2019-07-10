@@ -19,9 +19,13 @@ class FormStep3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(event!.name)
-        print(event!.date)
+        //print(event!.name)
+        //print(event!.date)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.event?.address = addressField.text
+        let step4VC = segue.destination as! FormStep4ViewController
+        step4VC.event = self.event
+    }
 }

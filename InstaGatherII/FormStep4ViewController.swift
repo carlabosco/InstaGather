@@ -15,10 +15,16 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     @IBOutlet weak var whosComingLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    var event: Event?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print(event!.name)
+//        print(event!.date)
+//        print(event!.address)
+
     }
     
     @IBAction func selectContacts(_ sender: Any) {
