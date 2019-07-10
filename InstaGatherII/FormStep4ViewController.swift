@@ -16,6 +16,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var whosComingLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     var event: Event?
+    var guestList = [[String:String]]()
     
     
     override func viewDidLoad() {
@@ -49,19 +50,37 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         }
     }
     
-    func openContacts() {
-        let contactPicker = CNContactPickerViewController.init()
-        contactPicker.delegate = self as?  CNContactPickerDelegate
-        self.present(contactPicker, animated: true, completion: nil)
+        func openContacts() {
+            let contactPicker = CNContactPickerViewController.init()
+            contactPicker.delegate = self as?  CNContactPickerDelegate
+            self.present(contactPicker, animated: true, completion: nil)
+        }
+    
+        func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+            picker.dismiss(animated: true)
+        }
+    
+        func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+            for contact in contacts {
+                
+                let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
+                
+                let guest = [
+                    "fullName": "\(contact.givenName) \(contact.familyName)",
+                    "phoneNumber": phoneString! as! String
+                ]
+                guestList.append(guest)
+                print(guestList)
+            }
+        }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.event?.guests = guestList
+        let step5VC = segue.destination as! FormStep5ViewController
+        step5VC.event = self.event
     }
     
-    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-        picker.dismiss(animated: true)
-    }
-    
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-        print(contacts)
-    }
     }
     
 

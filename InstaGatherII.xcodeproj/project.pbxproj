@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1114794B22D65BD700A572E8 /* FormStep5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */; };
 		113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049C922D50A08009E1356 /* ContactsUI.framework */; };
 		113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049CB22D50A36009E1356 /* Contacts.framework */; };
 		1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep5ViewController.swift; sourceTree = "<group>"; };
 		113049C922D50A08009E1356 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		113049CB22D50A36009E1356 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep4ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				11989F1022CC65A200545917 /* Event.swift */,
 				11772F4922D2A93B00733201 /* FormStep3ViewController.swift */,
 				1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */,
+				1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */,
 			);
 			path = InstaGatherII;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11989F1122CC65A200545917 /* Event.swift in Sources */,
+				1114794B22D65BD700A572E8 /* FormStep5ViewController.swift in Sources */,
 				1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */,
 				11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */,
 				11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */,
