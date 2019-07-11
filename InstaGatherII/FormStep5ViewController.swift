@@ -17,9 +17,8 @@ class FormStep5ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        
-//        summaryField.text = "\(event?.name ?? "party") \(event?.address ?? "home") \(event?.date ?? "today") \(event?.guests)"
+        summaryField.text = "\(event?.name ?? "party") \(event?.address ?? "home") \(event?.date ?? "today") \(event?.guestsNames)"
     }
 
 }

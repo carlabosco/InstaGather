@@ -14,4 +14,6 @@ class Event: NSObject {
     var date: String?
     var address: String?
     var guests: [[String:String]]?
+    var guestsNames: [String]?
+    var guestsPhones: [String]?
 }

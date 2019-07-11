@@ -17,6 +17,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var nextButton: UIButton!
     var event: Event?
     var guestList = [[String:String]]()
+    var guestsNames = [String]()
+    var guestsPhones = [String]()
     
     
     override func viewDidLoad() {
@@ -61,22 +63,29 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         }
     
         func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+            
             for contact in contacts {
+                
+                let fullName = "\(contact.givenName) \(contact.familyName)"
+                guestsNames.append(fullName)
                 
                 let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
                 
+                guestsPhones.append(phoneString! as! String)
+                
                 let guest = [
-                    "fullName": "\(contact.givenName) \(contact.familyName)",
+                    "fullName": fullName,
                     "phoneNumber": phoneString! as! String
                 ]
                 guestList.append(guest)
-                print(guestList)
+//                print(guestList)
             }
         }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.event?.guests = guestList
+        self.event?.guestsNames = guestsNames
         let step5VC = segue.destination as! FormStep5ViewController
         step5VC.event = self.event
     }
