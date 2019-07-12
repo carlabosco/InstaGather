@@ -86,6 +86,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.event?.guests = guestList
         self.event?.guestsNames = guestsNames
+        self.event?.guestsPhones = guestsPhones
         let step5VC = segue.destination as! FormStep5ViewController
         step5VC.event = self.event
     }

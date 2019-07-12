@@ -288,12 +288,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
-                                <rect key="frame" x="20" y="402" width="374" height="312"/>
+                                <rect key="frame" x="20" y="279" width="374" height="312"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.60024118420000006" green="0.85017603639999995" blue="0.95028060670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-D7-ULv">
+                                <rect key="frame" x="20" y="637" width="374" height="75"/>
+                                <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="oJU-RS-pH1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonAction:" destination="DlD-8d-nmV" eventType="touchUpInside" id="bHQ-fr-Cla"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -304,6 +318,7 @@
                         <viewLayoutGuide key="safeArea" id="fle-aw-7Za"/>
                     </view>
                     <connections>
+                        <outlet property="sendButton" destination="Lge-D7-ULv" id="aCO-DM-iZA"/>
                         <outlet property="summaryField" destination="tmu-mF-CrH" id="oh2-hI-3nQ"/>
                         <outlet property="summaryLabel" destination="Yhu-Wq-tea" id="v1L-0E-qdh"/>
                     </connections>

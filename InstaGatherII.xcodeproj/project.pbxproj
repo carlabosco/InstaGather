@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1100307722D83509009B3623 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1100307622D83509009B3623 /* MessageUI.framework */; };
 		1114794B22D65BD700A572E8 /* FormStep5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */; };
 		113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049C922D50A08009E1356 /* ContactsUI.framework */; };
 		113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049CB22D50A36009E1356 /* Contacts.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1100307622D83509009B3623 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep5ViewController.swift; sourceTree = "<group>"; };
 		113049C922D50A08009E1356 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		113049CB22D50A36009E1356 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1100307722D83509009B3623 /* MessageUI.framework in Frameworks */,
 				113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */,
 				113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */,
 			);
@@ -54,6 +57,7 @@
 		113049C822D50A07009E1356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1100307622D83509009B3623 /* MessageUI.framework */,
 				113049CB22D50A36009E1356 /* Contacts.framework */,
 				113049C922D50A08009E1356 /* ContactsUI.framework */,
 			);
@@ -319,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Z57A9UCR;
 				INFOPLIST_FILE = InstaGatherII/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Z57A9UCR;
 				INFOPLIST_FILE = InstaGatherII/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
