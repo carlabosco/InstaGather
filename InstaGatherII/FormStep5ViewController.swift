@@ -19,7 +19,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        summaryField.text = "\(event?.name ?? "party") \(event?.address ?? "home") \(event?.date ?? "today") \(event?.guestsNames)"
+        summaryField.text = "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(event?.guestsNames ?? [""])"
     }
     
     

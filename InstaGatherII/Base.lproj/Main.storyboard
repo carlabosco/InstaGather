@@ -287,14 +287,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
                                 <rect key="frame" x="20" y="279" width="374" height="312"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.60024118420000006" green="0.85017603639999995" blue="0.95028060670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-D7-ULv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-D7-ULv">
                                 <rect key="frame" x="20" y="637" width="374" height="75"/>
                                 <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -311,9 +310,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="top" secondItem="tmu-mF-CrH" secondAttribute="bottom" constant="46" id="3as-85-KTW"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="4bh-a3-3Vu"/>
+                            <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="150" id="5Wc-g4-HMR"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="top" secondItem="fle-aw-7Za" secondAttribute="top" constant="126" id="9Ll-AB-RVY"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="tmu-mF-CrH" secondAttribute="leading" id="EVP-LE-oFc"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="tmu-mF-CrH" secondAttribute="trailing" id="KlT-9w-JR9"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="Yhu-Wq-tea" secondAttribute="leading" id="c4M-ZF-3QB"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" constant="20" id="jXP-r6-3De"/>
+                            <constraint firstItem="tmu-mF-CrH" firstAttribute="top" secondItem="Yhu-Wq-tea" secondAttribute="bottom" constant="30" id="jlk-cc-uyK"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" id="vhc-e8-H4q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fle-aw-7Za"/>
                     </view>
