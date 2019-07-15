@@ -20,6 +20,7 @@
 		11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F0C22CC64F000545917 /* FormStep1ViewController.swift */; };
 		11989F0F22CC652C00545917 /* FormStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F0E22CC652C00545917 /* FormStep2ViewController.swift */; };
 		11989F1122CC65A200545917 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F1022CC65A200545917 /* Event.swift */; };
+		F812023875C73B5FE3134AB2 /* Pods_InstaGatherII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F4B44BE2D714B87899DFD /* Pods_InstaGatherII.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		11989F0C22CC64F000545917 /* FormStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep1ViewController.swift; sourceTree = "<group>"; };
 		11989F0E22CC652C00545917 /* FormStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep2ViewController.swift; sourceTree = "<group>"; };
 		11989F1022CC65A200545917 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2F4F4B44BE2D714B87899DFD /* Pods_InstaGatherII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGatherII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4642C3463994F07B9686F1EC /* Pods-InstaGatherII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGatherII.debug.xcconfig"; path = "Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4B2F87925040ABCE82FC01 /* Pods-InstaGatherII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGatherII.release.xcconfig"; path = "Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 				1100307722D83509009B3623 /* MessageUI.framework in Frameworks */,
 				113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */,
 				113049CA22D50A08009E1356 /* ContactsUI.framework in Frameworks */,
+				F812023875C73B5FE3134AB2 /* Pods_InstaGatherII.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,7 @@
 				1100307622D83509009B3623 /* MessageUI.framework */,
 				113049CB22D50A36009E1356 /* Contacts.framework */,
 				113049C922D50A08009E1356 /* ContactsUI.framework */,
+				2F4F4B44BE2D714B87899DFD /* Pods_InstaGatherII.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,6 +76,7 @@
 				11989EF922CC35F500545917 /* InstaGatherII */,
 				11989EF822CC35F500545917 /* Products */,
 				113049C822D50A07009E1356 /* Frameworks */,
+				665A58B9D948F27C1C7D3A5A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,16 @@
 			path = InstaGatherII;
 			sourceTree = "<group>";
 		};
+		665A58B9D948F27C1C7D3A5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4642C3463994F07B9686F1EC /* Pods-InstaGatherII.debug.xcconfig */,
+				EE4B2F87925040ABCE82FC01 /* Pods-InstaGatherII.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11989F0922CC35F700545917 /* Build configuration list for PBXNativeTarget "InstaGatherII" */;
 			buildPhases = (
+				5E2C17A3015E04D5CDBDFF05 /* [CP] Check Pods Manifest.lock */,
 				11989EF322CC35F500545917 /* Sources */,
 				11989EF422CC35F500545917 /* Frameworks */,
 				11989EF522CC35F500545917 /* Resources */,
+				0FA575C50C8698EFDFA49F4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +183,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FA575C50C8698EFDFA49F4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E2C17A3015E04D5CDBDFF05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaGatherII-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11989EF322CC35F500545917 /* Sources */ = {
@@ -320,6 +381,7 @@
 		};
 		11989F0A22CC35F700545917 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4642C3463994F07B9686F1EC /* Pods-InstaGatherII.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +400,7 @@
 		};
 		11989F0B22CC35F700545917 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4B2F87925040ABCE82FC01 /* Pods-InstaGatherII.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

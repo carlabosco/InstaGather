@@ -6,8 +6,7 @@ target 'InstaGatherII' do
   use_frameworks!
 
   # Pods for InstaGatherII
-  
-  
 
+  pod 'RealmSwift'
 
 end
