@@ -22,7 +22,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         summaryField.text = "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(event?.guestsNames ?? [""])"
         
         let alert = UIAlertController(title: "Save guests as a group?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "No, thank you.", style: .cancel, handler: nil))
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Group name"
         })
