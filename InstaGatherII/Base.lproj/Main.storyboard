@@ -288,7 +288,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
-                                <rect key="frame" x="20" y="279" width="374" height="232"/>
+                                <rect key="frame" x="20" y="279" width="374" height="307"/>
                                 <color key="backgroundColor" red="0.60024118420000006" green="0.85017603639999995" blue="0.95028060670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -310,7 +310,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lge-D7-ULv" firstAttribute="top" secondItem="tmu-mF-CrH" secondAttribute="bottom" constant="46" id="3as-85-KTW"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="top" secondItem="tmu-mF-CrH" secondAttribute="bottom" constant="30" id="3as-85-KTW"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="4bh-a3-3Vu"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="150" id="5Wc-g4-HMR"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="top" secondItem="fle-aw-7Za" secondAttribute="top" constant="126" id="9Ll-AB-RVY"/>
