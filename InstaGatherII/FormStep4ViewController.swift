@@ -9,6 +9,7 @@
 import UIKit
 import Contacts
 import ContactsUI
+import RealmSwift
 
 
 class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
@@ -16,7 +17,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var whosComingLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     var event: Event?
-    var guestList = [[String:String]]()
+    var guests = List<Contact>()
     var guestsNames = [String]()
     var guestsPhones = [String]()
     
@@ -24,6 +25,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let realm = try! Realm()
 //        print(event!.name)
 //        print(event!.date)
 //        print(event!.address)
@@ -66,25 +68,35 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             
             for contact in contacts {
                 
-                let fullName = "\(contact.givenName) \(contact.familyName)"
-                guestsNames.append(fullName)
+                let newContact = Contact()
+                
+                newContact.fullName = "\(contact.givenName) \(contact.familyName)"
                 
                 let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
                 
+                newContact.phoneNumber = (phoneString! as! String)
+                
+//                let fullName = "\(contact.givenName) \(contact.familyName)"
+//                guestsNames.append(fullName)
+//
+//                let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
+//
                 guestsPhones.append(phoneString! as! String)
                 
-                let guest = [
-                    "fullName": fullName,
-                    "phoneNumber": phoneString! as! String
-                ]
-                guestList.append(guest)
-//                print(guestList)
+                event?.guests.append(newContact)
+//
+//                let guest = [
+//                    "fullName": fullName,
+//                    "phoneNumber": phoneString! as! String
+//                ]
+//                guestList.append(guest)
+////                print(guestList)
             }
         }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.event?.guests = guestList
+        self.event?.guests = guests
         self.event?.guestsNames = guestsNames
         self.event?.guestsPhones = guestsPhones
         let step5VC = segue.destination as! FormStep5ViewController

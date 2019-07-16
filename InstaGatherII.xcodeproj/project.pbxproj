@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		113049CC22D50A36009E1356 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113049CB22D50A36009E1356 /* Contacts.framework */; };
 		1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */; };
 		11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11772F4922D2A93B00733201 /* FormStep3ViewController.swift */; };
+		1193B93C22DD500C008159FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193B93B22DD500C008159FB /* Contact.swift */; };
 		11989EFB22CC35F500545917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989EFA22CC35F500545917 /* AppDelegate.swift */; };
 		11989F0022CC35F500545917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11989EFE22CC35F500545917 /* Main.storyboard */; };
 		11989F0222CC35F700545917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11989F0122CC35F700545917 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		113049CB22D50A36009E1356 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep4ViewController.swift; sourceTree = "<group>"; };
 		11772F4922D2A93B00733201 /* FormStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep3ViewController.swift; sourceTree = "<group>"; };
+		1193B93B22DD500C008159FB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		11989EF722CC35F500545917 /* InstaGatherII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGatherII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11989EFA22CC35F500545917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11989EFF22CC35F500545917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				11772F4922D2A93B00733201 /* FormStep3ViewController.swift */,
 				1136511522D3D0BC007905E8 /* FormStep4ViewController.swift */,
 				1114794A22D65BD700A572E8 /* FormStep5ViewController.swift */,
+				1193B93B22DD500C008159FB /* Contact.swift */,
 			);
 			path = InstaGatherII;
 			sourceTree = "<group>";
@@ -112,7 +115,6 @@
 				4642C3463994F07B9686F1EC /* Pods-InstaGatherII.debug.xcconfig */,
 				EE4B2F87925040ABCE82FC01 /* Pods-InstaGatherII.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -235,6 +237,7 @@
 				1114794B22D65BD700A572E8 /* FormStep5ViewController.swift in Sources */,
 				1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */,
 				11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */,
+				1193B93C22DD500C008159FB /* Contact.swift in Sources */,
 				11772F4A22D2A93B00733201 /* FormStep3ViewController.swift in Sources */,
 				11989EFB22CC35F500545917 /* AppDelegate.swift in Sources */,
 				11989F0F22CC652C00545917 /* FormStep2ViewController.swift in Sources */,
