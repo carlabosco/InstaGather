@@ -72,8 +72,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
                 
                 newContact.phoneNumber = (phoneString! as! String)
                 
-//                let fullName = "\(contact.givenName) \(contact.familyName)"
-//                guestsNames.append(fullName)
+                let fullName = "\(contact.givenName) \(contact.familyName)"
+                guestsNames.append(fullName)
 //
 //                let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
 //

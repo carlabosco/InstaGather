@@ -23,8 +23,11 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let realm = try! Realm()
+        
+        let namesString = event?.guestsNames?.joined(separator: ", ")
        
-        summaryField.text = "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(event?.guestsNames ?? [""])"
+        summaryField.text =
+        "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(namesString ?? "")"
         
         let alert = UIAlertController(title: "Save guests as a group?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No, thank you.", style: .cancel, handler: nil))
