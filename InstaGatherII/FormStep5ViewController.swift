@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import RealmSwift
 
 class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
@@ -18,6 +19,10 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        let realm = try! Realm()
        
         summaryField.text = "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(event?.guestsNames ?? [""])"
         
@@ -29,7 +34,23 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             
             if let groupName = alert.textFields?.first?.text {
-                print("Group name: \(groupName)")
+                
+                
+                
+                let newGroup = Group()
+                
+                newGroup.name = alert.textFields?.first?.text
+                newGroup.groupContacts = self.event!.guests
+                
+                try! realm.write {
+                    realm.add(newGroup)
+                }
+                
+                print("Group name: \(newGroup)")
+                
+                for contact in newGroup.groupContacts {
+                    print(contact.fullName)
+                }
             }
         }))
         

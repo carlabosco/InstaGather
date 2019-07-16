@@ -25,10 +25,6 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
-//        print(event!.name)
-//        print(event!.date)
-//        print(event!.address)
 
     }
     
