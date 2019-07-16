@@ -46,11 +46,13 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
                     realm.add(newGroup)
                 }
                 
-                print("Group name: \(newGroup)")
+                let gees = realm.objects(Group.self)
+                print (Array(gees))
                 
-                for contact in newGroup.groupContacts {
-                    print(contact.fullName)
-                }
+                
+                
+//                print("Group name: \(newGroup)")
+                
             }
         }))
         

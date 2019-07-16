@@ -79,16 +79,18 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
 //
                 guestsPhones.append(phoneString! as! String)
                 
-                event?.guests.append(newContact)
+                guests.append(newContact)
 //
 //                let guest = [
 //                    "fullName": fullName,
 //                    "phoneNumber": phoneString! as! String
 //                ]
 //                guestList.append(guest)
-////                print(guestList)
+//                print(guestList)
+                print(guests)
             }
         }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
