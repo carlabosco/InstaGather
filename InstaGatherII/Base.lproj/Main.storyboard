@@ -212,7 +212,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cpk-78-LwM">
-                                <rect key="frame" x="20" y="164" width="374" height="327"/>
+                                <rect key="frame" x="20" y="208" width="374" height="327"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is coming?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldy-Rd-s88">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -325,13 +325,7 @@
                             <outlet property="delegate" destination="Mms-05-6nx" id="ugF-T0-bPn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Groups" id="kQY-YD-5HM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="U2S-hC-HCM">
-                            <connections>
-                                <segue destination="yIV-oq-iaW" kind="show" identifier="backFromSelectedGroups" id="xeS-9s-hcC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Your Groups" id="kQY-YD-5HM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEH-A3-pA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +344,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did we get everything right?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhu-Wq-tea">
-                                <rect key="frame" x="20" y="170" width="374" height="35"/>
+                                <rect key="frame" x="20" y="214" width="374" height="35"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -370,7 +364,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
-                                <rect key="frame" x="20" y="235" width="374" height="356"/>
+                                <rect key="frame" x="20" y="279" width="374" height="312"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -405,7 +399,4 @@
     <resources>
         <image name="1547" width="5000" height="5000"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xeS-9s-hcC"/>
-    </inferredMetricsTieBreakers>
 </document>

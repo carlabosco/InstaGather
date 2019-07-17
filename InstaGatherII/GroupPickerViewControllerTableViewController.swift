@@ -14,13 +14,14 @@ class GroupPickerViewControllerTableViewController: UITableViewController {
     var event: Event?
     
     var groups = try! Realm().objects(Group.self)
+    var selectedGroups: [Group] = []
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(groups)
+//        print(groups)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +70,12 @@ extension GroupPickerViewControllerTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(self.groups[indexPath.row])
+//        print(self.groups[indexPath.row])
+        
+        selectedGroups.append(self.groups[indexPath.row])
+        print(selectedGroups)
+        
+//        self.performSegue(withIdentifier: "backFromSelectedGroups", sender: nil)
     }
 }
 
