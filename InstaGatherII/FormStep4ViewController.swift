@@ -16,6 +16,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     @IBOutlet weak var whosComingLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var selectGroupButton: UIButton!
+    
     var event: Event?
     var guests = List<Contact>()
     var guestsNames = [String]()
@@ -94,11 +96,27 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.event?.guests = guests
-        self.event?.guestsNames = guestsNames
-        self.event?.guestsPhones = guestsPhones
-        let step5VC = segue.destination as! FormStep5ViewController
-        step5VC.event = self.event
+//        self.event?.guests = guests
+//        self.event?.guestsNames = guestsNames
+//        self.event?.guestsPhones = guestsPhones
+//        let step5VC = segue.destination as! FormStep5ViewController
+//        step5VC.event = self.event
+        
+        if (segue.identifier == "FormStep5ViewController") {
+            self.event?.guests = guests
+            self.event?.guestsNames = guestsNames
+            self.event?.guestsPhones = guestsPhones
+            let step5VC = segue.destination as! FormStep5ViewController
+            step5VC.event = self.event
+            
+        }
+        if (segue.identifier == "PickGroup") {
+            self.event?.guests = guests
+            self.event?.guestsNames = guestsNames
+            self.event?.guestsPhones = guestsPhones
+            let pickGroupVC = segue.destination as! GroupPickerViewControllerTableViewController
+            pickGroupVC.event = self.event
+        }
     }
     
     }

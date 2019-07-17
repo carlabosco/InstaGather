@@ -20,9 +20,15 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        let realm = try! Realm()
+        
+        let realmFile = try! Realm()
+        let savedGroups = realmFile.objects(Group.self)
+        print(savedGroups)
+   
+        
+//        let realm = try! Realm()
         
         let namesString = event?.guestsNames?.joined(separator: ", ")
        
@@ -45,12 +51,12 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
                 newGroup.name = alert.textFields?.first?.text
                 newGroup.groupContacts = self.event!.guests
                 
-                try! realm.write {
-                    realm.add(newGroup)
+                try! realmFile.write {
+                    realmFile.add(newGroup)
                 }
                 
-                let gees = realm.objects(Group.self)
-                print (Array(gees))
+//                let gees = realm.objects(Group.self)
+//                print (Array(gees))
                 
                 
                 
