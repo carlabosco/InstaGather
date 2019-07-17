@@ -15,6 +15,7 @@ class GroupPickerViewControllerTableViewController: UITableViewController {
     
     var groups = try! Realm().objects(Group.self)
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +54,22 @@ extension GroupPickerViewControllerTableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-        
+
         let group = groups[indexPath.row]
         cell.textLabel?.text = group.name
-        return cell
+        
+        
 
+//        for contact in group.groupContacts {
+//            cell.textLabel?.text = contact.fullName
+//        }
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print(self.groups[indexPath.row])
     }
 }
 
