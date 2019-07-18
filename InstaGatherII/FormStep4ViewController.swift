@@ -23,11 +23,20 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     var guestsNames = [String]()
     var guestsPhones = [String]()
     
+    var selectedGroups: [Group] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
+    }
+    
+    @IBAction func unwindToFormStep4(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceViewController = unwindSegue.source as? GroupPickerViewControllerTableViewController {
+            selectedGroups = sourceViewController.selectedGroups
+        }
+        print(selectedGroups)
     }
     
     @IBAction func selectContacts(_ sender: Any) {

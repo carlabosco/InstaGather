@@ -11,8 +11,13 @@ import RealmSwift
 
 
 class GroupPickerViewControllerTableViewController: UITableViewController {
-    var event: Event?
     
+  
+    @IBAction func doneButton(_ sender: Any) {
+        performSegue(withIdentifier: "BackFromSelectedGroups", sender: self)
+    }
+    
+    var event: Event?
     var groups = try! Realm().objects(Group.self)
     var selectedGroups: [Group] = []
     
@@ -73,9 +78,17 @@ extension GroupPickerViewControllerTableViewController {
 //        print(self.groups[indexPath.row])
         
         selectedGroups.append(self.groups[indexPath.row])
-        print(selectedGroups)
+//        print(selectedGroups)
         
 //        self.performSegue(withIdentifier: "backFromSelectedGroups", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BackFromSelectedGroups" {
+            let step4VC = segue.destination as! FormStep4ViewController
+            step4VC.selectedGroups = self.selectedGroups
+        }
+//        print(self.selectedGroups)
     }
 }
 
