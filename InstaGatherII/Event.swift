@@ -14,10 +14,7 @@ class Event: Object {
     @objc dynamic var name: String?
     @objc dynamic var date: String?
     @objc dynamic var address: String?
-    //@objc dynamic var groupName: String?
     var guests = List<Contact>()
-    
-//    var guests: [[String:String]]?
     var guestsNames: [String]?
     var guestsPhones: [String]?
 }

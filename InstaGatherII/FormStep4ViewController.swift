@@ -36,7 +36,6 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         if let sourceViewController = unwindSegue.source as? GroupPickerViewControllerTableViewController {
             selectedGroups = sourceViewController.selectedGroups
         }
-//        print(selectedGroups)
         
         for group in selectedGroups {
             for contact in group.groupContacts {
@@ -94,31 +93,14 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
                 
                 let fullName = "\(contact.givenName) \(contact.familyName)"
                 guestsNames.append(fullName)
-//
-//                let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
-//
                 guestsPhones.append(phoneString! as! String)
-                
                 guests.append(newContact)
-//
-//                let guest = [
-//                    "fullName": fullName,
-//                    "phoneNumber": phoneString! as! String
-//                ]
-//                guestList.append(guest)
-//                print(guestList)
-                print(guests)
             }
         }
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        self.event?.guests = guests
-//        self.event?.guestsNames = guestsNames
-//        self.event?.guestsPhones = guestsPhones
-//        let step5VC = segue.destination as! FormStep5ViewController
-//        step5VC.event = self.event
         
         if (segue.identifier == "FormStep5ViewController") {
             self.event?.guests = guests
@@ -136,7 +118,6 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             pickGroupVC.event = self.event
         }
     }
-    
-    }
+}
     
 

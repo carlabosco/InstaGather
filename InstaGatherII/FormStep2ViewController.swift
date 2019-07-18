@@ -41,8 +41,6 @@ class FormStep2ViewController: UIViewController {
         
     }
     
-    
-    
     @IBAction func endDateSelection(_ sender: UIButton) {
         view.endEditing(true)
 

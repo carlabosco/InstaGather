@@ -22,13 +22,10 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        
         let realmFile = try! Realm()
         let savedGroups = realmFile.objects(Group.self)
         print(savedGroups)
    
-        
-//        let realm = try! Realm()
         
         let namesString = event?.guestsNames?.joined(separator: ", ")
        
@@ -54,14 +51,6 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
                 try! realmFile.write {
                     realmFile.add(newGroup)
                 }
-                
-//                let gees = realm.objects(Group.self)
-//                print (Array(gees))
-                
-                
-                
-//                print("Group name: \(newGroup)")
-                
             }
         }))
         
@@ -72,7 +61,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     @IBAction func sendButtonAction(_ sender: Any) {
         
         let messageVC = MFMessageComposeViewController()
-        messageVC.body = "Let's get together!\nEvent: \(event?.name) \nDate: \(event?.date) \nAddress: \(event?.address)";
+        messageVC.body = "Let's get together!\nEvent: \(event?.name ?? "") \nWhen: \(event?.date ?? "") \nWhere: \(event?.address ?? "")";
         messageVC.recipients = event?.guestsPhones
         messageVC.messageComposeDelegate = self
         self.present(messageVC, animated: true, completion: nil)

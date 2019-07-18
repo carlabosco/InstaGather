@@ -18,9 +18,6 @@ class FormStep3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //print(event!.name)
-        //print(event!.date)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

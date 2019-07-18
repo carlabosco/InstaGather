@@ -28,6 +28,4 @@ class FormStep1ViewController: UIViewController {
         let step2VC = segue.destination as! FormStep2ViewController
         step2VC.event = self.event
     }
-    
-
 }
