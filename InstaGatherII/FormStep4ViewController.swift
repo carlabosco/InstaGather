@@ -36,8 +36,17 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         if let sourceViewController = unwindSegue.source as? GroupPickerViewControllerTableViewController {
             selectedGroups = sourceViewController.selectedGroups
         }
-        print(selectedGroups)
+//        print(selectedGroups)
+        
+        for group in selectedGroups {
+            for contact in group.groupContacts {
+                guestsNames.append(contact.fullName!)
+                guestsPhones.append(contact.phoneNumber!)
+            }
+        }
     }
+    
+    
     
     @IBAction func selectContacts(_ sender: Any) {
         
