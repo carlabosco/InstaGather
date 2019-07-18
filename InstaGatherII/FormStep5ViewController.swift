@@ -32,28 +32,33 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         summaryField.text =
         "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(namesString ?? "")"
         
-        let alert = UIAlertController(title: "Save guests as a group?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "No, thank you.", style: .cancel, handler: nil))
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Group name"
-        })
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+        if (event?.guestsNames!.count)! > 1 {
             
-            if let groupName = alert.textFields?.first?.text {
-                
-                let newGroup = Group()
-                
-                newGroup.name = alert.textFields?.first?.text
-                newGroup.groupContacts = self.event!.guests
-                
-                try! realmFile.write {
-                    realmFile.add(newGroup)
-                }
-            }
-        }))
+            let alert = UIAlertController(title: "Save guests as a group?", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "No, thank you.", style: .cancel, handler: nil))
+            alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Group name"
+            })
         
-        self.present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+                if let groupName = alert.textFields?.first?.text {
+                    
+                    let newGroup = Group()
+                    
+                    newGroup.name = alert.textFields?.first?.text
+                    newGroup.groupContacts = self.event!.guests
+                    
+                    try! realmFile.write {
+                        realmFile.add(newGroup)
+                    }
+                }
+            }))
+        
+            self.present(alert, animated: true)
+            
+        }
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
