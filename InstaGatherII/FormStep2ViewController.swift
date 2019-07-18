@@ -46,11 +46,13 @@ class FormStep2ViewController: UIViewController {
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.event?.date = dateField.text
         let step3VC = segue.destination as! FormStep3ViewController
         step3VC.event = self.event
     }
-
-
 }

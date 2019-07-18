@@ -8,6 +8,18 @@
 
 import UIKit
 
+extension UIViewController {
+    
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class FormStep1ViewController: UIViewController {
 
     
@@ -19,8 +31,10 @@ class FormStep1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.event = Event()
+        
+        self.hideKeyboard()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

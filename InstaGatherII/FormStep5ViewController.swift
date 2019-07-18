@@ -37,11 +37,10 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Group name"
         })
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             
             if let groupName = alert.textFields?.first?.text {
-                
-                
                 
                 let newGroup = Group()
                 
@@ -57,7 +56,6 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         self.present(alert, animated: true)
     }
     
-    
     @IBAction func sendButtonAction(_ sender: Any) {
         
         let messageVC = MFMessageComposeViewController()
@@ -69,13 +67,13 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         switch (result) {
-        case .cancelled:
+        case MessageComposeResult.cancelled:
             print("Message was cancelled")
             dismiss(animated: true, completion: nil)
-        case .failed:
+        case MessageComposeResult.failed:
             print("Message failed")
             dismiss(animated: true, completion: nil)
-        case .sent:
+        case MessageComposeResult.sent:
             print("Message was sent")
             dismiss(animated: true, completion: nil)
         default:

@@ -18,6 +18,7 @@ class FormStep3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
