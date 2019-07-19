@@ -26,28 +26,7 @@ class GroupPickerViewControllerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(groups)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    
 }
 
 extension GroupPickerViewControllerTableViewController {
@@ -64,12 +43,6 @@ extension GroupPickerViewControllerTableViewController {
         let group = groups[indexPath.row]
         cell.textLabel?.text = group.name
         
-        
-
-//        for contact in group.groupContacts {
-//            cell.textLabel?.text = contact.fullName
-//        }
-        
         return cell
     }
     
@@ -82,20 +55,32 @@ extension GroupPickerViewControllerTableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
-//        print(self.groups[indexPath.row])
         
         selectedGroups.append(self.groups[indexPath.row])
-//        print(selectedGroups)
-        
-//        self.performSegue(withIdentifier: "backFromSelectedGroups", sender: nil)
     }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            if let group = groups[indexPath.row] as? Group {
+                let realmFile = try! Realm()
+                let stored = realmFile.objects(Group.self)
+                try! realmFile.write {
+                    realmFile.delete(stored)
+                }
+                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            }
+        }
+    }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BackFromSelectedGroups" {
             let step4VC = segue.destination as! FormStep4ViewController
             step4VC.selectedGroups = self.selectedGroups
         }
-//        print(self.selectedGroups)
     }
 }
 

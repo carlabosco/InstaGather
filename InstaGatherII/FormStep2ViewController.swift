@@ -37,8 +37,6 @@ class FormStep2ViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         dateField.text = dateFormatter.string(from: datePicker.date)
-
-        
     }
     
     @IBAction func endDateSelection(_ sender: UIButton) {
