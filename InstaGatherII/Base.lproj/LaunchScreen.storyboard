@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="103086-OM8M4E-996" translatesAutoresizingMaskIntoConstraints="NO" id="DRF-b4-M5B">
-                                <rect key="frame" x="20" y="-552" width="374" height="2000"/>
+                                <rect key="frame" x="0.0" y="-552" width="414" height="2000"/>
                                 <color key="backgroundColor" red="0.60024118423461914" green="0.85017603635787964" blue="0.95028060674667358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InstaGather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m53-XA-fSD">
@@ -36,7 +36,7 @@
                             <constraint firstItem="DRF-b4-M5B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OeY-Rz-JnE"/>
                             <constraint firstItem="DRF-b4-M5B" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SWM-PF-0fp"/>
                             <constraint firstItem="m53-XA-fSD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="YdR-3m-4P7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DRF-b4-M5B" secondAttribute="trailing" constant="20" id="Z0U-uA-FJ6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DRF-b4-M5B" secondAttribute="trailing" id="Z0U-uA-FJ6"/>
                             <constraint firstItem="DRF-b4-M5B" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="suG-yz-pHS"/>
                             <constraint firstItem="m53-XA-fSD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="v2T-8q-QDv"/>
                         </constraints>
