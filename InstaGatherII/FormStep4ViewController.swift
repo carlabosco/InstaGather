@@ -37,7 +37,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     @IBAction func unwindToFormStep4(_ unwindSegue: UIStoryboardSegue) {
          print("Entered unwind function +++++++++++++++++++++++++\(selectedGroups)")
-        var selectedGroups: [Group] = []
+//        var selectedGroups: [Group] = []
         if let sourceViewController = unwindSegue.source as? GroupPickerViewControllerTableViewController {
             selectedGroups = sourceViewController.selectedGroups
         }
@@ -45,11 +45,11 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         for group in selectedGroups {
             for contact in group.groupContacts {
                 
-                try! realm.write {
+//                try! realm.write {
                     guestsNames.append(contact.fullName!)
                     guestsPhones.append(contact.phoneNumber!)
-                    realm.add(contact)
-                }
+//                    realm.add(contact)
+//                }
             }
         }
     }
@@ -89,11 +89,15 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         }
     
         func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+            
             print("Entered contactPicker function *******************\(selectedGroups)")
+            
+            var guests = List<Contact>()
             let realm = try! Realm()
 //            var contacts = try! Realm().objects(Contact.self)
             try! realm.write {
                 realm.add(selectedGroups)
+                realm.add(guests)
             }
 
             
@@ -111,13 +115,14 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
                 guestsNames.append(fullName)
                 guestsPhones.append(phoneString! as! String)
                 
-//                    let realm = try! Realm()
+                    let realm = try! Realm()
 //                    var contacts = try! Realm().objects(Contact.self)
-//                    try! realm.write {
-//                        realm.add(newContact)
-//                    }
+                    try! realm.write {
+                        guests.append(newContact)
+                        realm.add(guests)
+                    }
                 
-                guests.append(newContact)
+//                guests.append(newContact)
                 print("added contact ***************************************\(newContact) added")
 //                    print(self.event!.isInvalidated)
                 print("***************************************\(guests)")
@@ -129,6 +134,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Entered segue")
 //        print(guests.isInvalidated)
         
         if (segue.identifier == "FormStep5ViewController") {
@@ -141,9 +147,9 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             
         }
         if (segue.identifier == "PickGroup") {
-//            self.event?.guests = guests
-//            self.event?.guestsNames = guestsNames
-//            self.event?.guestsPhones = guestsPhones
+            self.event?.guests = guests
+            self.event?.guestsNames = guestsNames
+            self.event?.guestsPhones = guestsPhones
             let pickGroupVC = segue.destination as! GroupPickerViewControllerTableViewController
             pickGroupVC.event = self.event
         }

@@ -20,7 +20,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let realmFile = try! Realm()
         let savedGroups = realmFile.objects(Group.self)
@@ -34,6 +34,14 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         
         
         if (event?.guestsNames!.count)! > 1 {
+            
+            var groups = try! Realm().objects(Group.self)
+            
+            try! realmFile.write {
+                realmFile.add(savedGroups)
+//                realmFile.add(guests)
+                realmFile.add(groups)
+            }
             
             let alert = UIAlertController(title: "Save guests as a group?", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "No, thank you.", style: .cancel, handler: nil))
