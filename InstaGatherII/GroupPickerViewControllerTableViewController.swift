@@ -18,13 +18,19 @@ class GroupPickerViewControllerTableViewController: UITableViewController {
     }
     
     var event: Event?
+    let realm = try! Realm()
     var groups = try! Realm().objects(Group.self)
+    
+   
+    
+    var group:Group?
     var selectedGroups: [Group] = []
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.groups = realm.objects(Group.self)
         
     }
 }
@@ -33,7 +39,7 @@ extension GroupPickerViewControllerTableViewController {
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        return self.groups.count
     }
     
     override func tableView(_ tableView: UITableView,
@@ -62,18 +68,16 @@ extension GroupPickerViewControllerTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            if let group = groups[indexPath.row] as? Group {
-                let realmFile = try! Realm()
-                let stored = realmFile.objects(Group.self)
-                try! realmFile.write {
-                    realmFile.delete(stored)
+            let group = groups[indexPath.row]
+                print(group)
+                
+                try! realm.write {
+                    realm.delete(group)
                 }
-                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             }
-        }
+        
     }
-    
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -20,7 +20,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let realmFile = try! Realm()
         let savedGroups = realmFile.objects(Group.self)
