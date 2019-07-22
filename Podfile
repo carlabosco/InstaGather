@@ -8,5 +8,7 @@ target 'InstaGatherII' do
   # Pods for InstaGatherII
 
   pod 'RealmSwift'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
 end

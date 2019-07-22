@@ -153,39 +153,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1547" translatesAutoresizingMaskIntoConstraints="NO" id="1cW-bs-Rlc">
-                                <rect key="frame" x="20" y="328" width="374" height="436"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1547" translatesAutoresizingMaskIntoConstraints="NO" id="fnw-7V-1nd">
+                                <rect key="frame" x="20" y="88" width="374" height="336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you meeting?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-WA-9fs">
-                                <rect key="frame" x="20" y="262" width="374" height="36"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" textContentType="street-address"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9L-cE-kKo">
-                                <rect key="frame" x="20" y="328" width="374" height="75"/>
-                                <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="9R1-gA-wga">
+                                <rect key="frame" x="20" y="220" width="374" height="606"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you meeting?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-WA-9fs">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                                    </textField>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-cX-puK">
+                                        <rect key="frame" x="0.0" y="47" width="374" height="473"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9L-cE-kKo">
+                                        <rect key="frame" x="0.0" y="531" width="374" height="75"/>
+                                        <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="FX1-xr-BtK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="yIV-oq-iaW" kind="show" id="YfY-a4-wfS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="FX1-xr-BtK"/>
+                                    <constraint firstItem="y9L-cE-kKo" firstAttribute="firstBaseline" secondItem="WZN-cX-puK" secondAttribute="baseline" constant="35.5" symbolType="layoutAnchor" id="OUh-Du-k3v"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yIV-oq-iaW" kind="show" id="YfY-a4-wfS"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y9L-cE-kKo" firstAttribute="top" secondItem="NMX-WA-9fs" secondAttribute="bottom" constant="30" id="Aa4-zH-5fJ"/>
-                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="y9L-cE-kKo" secondAttribute="trailing" constant="20" id="Boa-sr-aE7"/>
-                            <constraint firstItem="NMX-WA-9fs" firstAttribute="top" secondItem="jxQ-aJ-f3w" secondAttribute="top" constant="174" id="IcR-Ah-eOv"/>
-                            <constraint firstItem="NMX-WA-9fs" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="LDL-TG-GJD"/>
-                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="NMX-WA-9fs" secondAttribute="trailing" constant="20" id="V2X-HR-5NU"/>
-                            <constraint firstItem="y9L-cE-kKo" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="ngX-bG-AGO"/>
+                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="bottom" secondItem="y9L-cE-kKo" secondAttribute="bottom" constant="36" id="gRv-xY-0TH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxQ-aJ-f3w"/>
                     </view>
