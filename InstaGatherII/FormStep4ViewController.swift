@@ -143,6 +143,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             self.event?.guestsNames = guestsNames
             self.event?.guestsPhones = guestsPhones
             let step5VC = segue.destination as! FormStep5ViewController
+            step5VC.selectedGroups = self.selectedGroups
             step5VC.event = self.event
             
         }

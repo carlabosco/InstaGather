@@ -16,6 +16,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryField: UITextView!
     var event: Event?
+    var selectedGroups: [Group]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(namesString ?? "")"
         
         
-        if (event?.guestsNames!.count)! > 1 {
+        if (event?.guestsNames!.count)! > 1 && self.selectedGroups?.count == 0 {
             
             var groups = try! Realm().objects(Group.self)
             
