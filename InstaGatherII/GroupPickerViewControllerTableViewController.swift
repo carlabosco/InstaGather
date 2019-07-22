@@ -18,19 +18,19 @@ class GroupPickerViewControllerTableViewController: UITableViewController {
     }
     
     var event: Event?
-    let realm = try! Realm()
+//    let realm = try! Realm()
     var groups = try! Realm().objects(Group.self)
     
    
     
-    var group:Group?
+//    var group:Group?
     var selectedGroups: [Group] = []
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.groups = realm.objects(Group.self)
+//        self.groups = realm.objects(Group.self)
         
     }
 }
@@ -70,11 +70,12 @@ extension GroupPickerViewControllerTableViewController {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             let group = groups[indexPath.row]
                 print(group)
-                
+                let realm = try! Realm()
+                let stored = realm.objects(Group.self)
                 try! realm.write {
-                    realm.delete(group)
+                    realm.delete(stored)
                 }
-                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             }
         
     }

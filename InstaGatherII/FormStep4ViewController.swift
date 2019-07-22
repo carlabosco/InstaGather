@@ -18,8 +18,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var selectGroupButton: UIButton!
     
-    let realm = try! Realm()
-    var contacts = try! Realm().objects(Contact.self)
+//    let realm = try! Realm()
+//    var contacts = try! Realm().objects(Contact.self)
     
     var event: Event?
     var guests = List<Contact>()
@@ -32,7 +32,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.contacts = realm.objects(Contact.self)
+//        self.contacts = realm.objects(Contact.self)
     }
     
     @IBAction func unwindToFormStep4(_ unwindSegue: UIStoryboardSegue) {
@@ -92,13 +92,13 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             
             print("Entered contactPicker function *******************\(selectedGroups)")
             
-            var guests = List<Contact>()
-            let realm = try! Realm()
-//            var contacts = try! Realm().objects(Contact.self)
-            try! realm.write {
-                realm.add(selectedGroups)
-                realm.add(guests)
-            }
+//            var guests = List<Contact>()
+//            let realm = try! Realm()
+////            var contacts = try! Realm().objects(Contact.self)
+//            try! realm.write {
+//                realm.add(selectedGroups)
+//                realm.add(guests)
+//            }
 
             
                 for contact in contacts {
