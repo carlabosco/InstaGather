@@ -199,6 +199,7 @@
                     <navigationItem key="navigationItem" id="zTM-lY-7iX"/>
                     <connections>
                         <outlet property="addressField" destination="NMX-WA-9fs" id="ymk-Xg-zb7"/>
+                        <outlet property="mapView" destination="WZN-cX-puK" id="yke-DP-4ai"/>
                         <outlet property="nextButton" destination="y9L-cE-kKo" id="nfR-4X-rXg"/>
                     </connections>
                 </viewController>
