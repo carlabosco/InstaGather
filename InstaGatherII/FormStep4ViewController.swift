@@ -26,6 +26,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     var guestsNames = [String]()
     var guestsPhones = [String]()
     
+//    var locationURL: URL?
+    
     var selectedGroups: [Group] = []
     
     
@@ -145,6 +147,7 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             let step5VC = segue.destination as! FormStep5ViewController
             step5VC.selectedGroups = self.selectedGroups
             step5VC.event = self.event
+//            step5VC.locationURL = URL(string: "https://www.google.com/maps/place/?q=place_id:\(place.placeID!)")
             
         }
         if (segue.identifier == "PickGroup") {

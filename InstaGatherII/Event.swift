@@ -17,4 +17,5 @@ class Event: Object {
     var guests = List<Contact>()
     var guestsNames: [String]?
     var guestsPhones: [String]?
+    var placeID: String!
 }

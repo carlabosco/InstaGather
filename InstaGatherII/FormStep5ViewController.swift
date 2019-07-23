@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import RealmSwift
 
+
 class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var sendButton: UIButton!
@@ -17,6 +18,10 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     @IBOutlet weak var summaryField: UITextView!
     var event: Event?
     var selectedGroups: [Group]?
+    
+//    var attributedString: NSMutableAttributedString?
+    
+//    var locationURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +34,15 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
    
         
         let namesString = event?.guestsNames?.joined(separator: ", ")
+        
+//        print("ADDRESS\(self.event?.address)")
+//        print("ADDRESS\(self.event?.placeID)")
+        
+//        attributedString = NSMutableAttributedString(string: self.event!.address!, attributes:[NSAttributedString.Key.link: URL(string: "https://www.google.com/maps/place/?q=place_id:\(self.event!.placeID!)")!])
+        
        
         summaryField.text =
-        "Event: \(event?.name ?? "party") \nWhere: \(event?.address ?? "home") \nWhen: \(event?.date ?? "today") \nGuests: \(namesString ?? "")"
+        "Event: \(event?.name ?? "party") \nWhere: \(event!.address!) \nMap: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(self.event!.placeID!)")!) \nWhen: \(event?.date ?? "today") \nGuests: \(namesString ?? "")"
         
         
         if (event?.guestsNames!.count)! > 1 && self.selectedGroups?.count == 0 {
@@ -73,7 +84,7 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     @IBAction func sendButtonAction(_ sender: Any) {
         
         let messageVC = MFMessageComposeViewController()
-        messageVC.body = "Let's get together!\nEvent: \(event?.name ?? "") \nWhen: \(event?.date ?? "") \nWhere: \(event?.address ?? "")";
+        messageVC.body = "Let's get together!\nEvent: \(event?.name ?? "party") \nWhere: \(event!.address!) \nOpen with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(event!.placeID!)")!) \nWhen: \(event?.date ?? "today")";
         messageVC.recipients = event?.guestsPhones
         messageVC.messageComposeDelegate = self
         self.present(messageVC, animated: true, completion: nil)

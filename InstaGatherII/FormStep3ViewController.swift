@@ -22,6 +22,10 @@ class FormStep3ViewController: UIViewController {
     var event: Event?
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
+    var locationName: String!
+    var locationID: String!
+//    var attributedString: NSMutableAttributedString?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +51,13 @@ class FormStep3ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.event?.address = addressField.text
+//        self.event?.address = addressField.text
+        self.event!.address = locationName
+        self.event!.placeID = locationID
         let step4VC = segue.destination as! FormStep4ViewController
+        print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
+        print("https://www.google.com/maps/place/?q=place_id:\(event!.placeID!)")
+        print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
         step4VC.event = self.event
     }
 }
@@ -70,11 +79,22 @@ extension FormStep3ViewController: GMSAutocompleteResultsViewControllerDelegate 
         annotation.subtitle = place.formattedAddress
         mapView.addAnnotation(annotation)
         
-        print(place.placeID!)
-        print("https://www.google.com/maps/place/?q=place_id:\(place.placeID!)")
+        locationName = place.name!
+        locationID = place.placeID!
+        
+        print(place.coordinate)
+//        print(place.placeID!)
+//        print(place.name!)
+//        print("https://www.google.com/maps/place/?q=place_id:\(place.placeID!)")
+        
+        locationName = place.name ?? ""
+//        attributedString = NSMutableAttributedString(string: locationName, attributes:[NSAttributedString.Key.link: URL(string: "https://www.google.com/maps/place/?q=place_id:\(placeID)")!])
+//        
+//        print(attributedString)
+        
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error) {
-        
+        print("Error: \(error.localizedDescription)")
     }
 }
