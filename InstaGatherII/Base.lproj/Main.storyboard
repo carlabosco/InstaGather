@@ -153,18 +153,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1547" translatesAutoresizingMaskIntoConstraints="NO" id="1cW-bs-Rlc">
-                                <rect key="frame" x="20" y="328" width="374" height="436"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you meeting?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-WA-9fs">
-                                <rect key="frame" x="20" y="262" width="374" height="36"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" textContentType="street-address"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="9R1-gA-wga">
+                                <rect key="frame" x="20" y="88" width="374" height="689"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-cX-puK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="689"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9L-cE-kKo">
-                                <rect key="frame" x="20" y="328" width="374" height="75"/>
+                                <rect key="frame" x="20" y="785" width="374" height="75"/>
                                 <color key="backgroundColor" red="0.42468542129999998" green="0.7676696932" blue="0.97854598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="FX1-xr-BtK"/>
@@ -180,18 +178,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y9L-cE-kKo" firstAttribute="top" secondItem="NMX-WA-9fs" secondAttribute="bottom" constant="30" id="Aa4-zH-5fJ"/>
-                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="y9L-cE-kKo" secondAttribute="trailing" constant="20" id="Boa-sr-aE7"/>
-                            <constraint firstItem="NMX-WA-9fs" firstAttribute="top" secondItem="jxQ-aJ-f3w" secondAttribute="top" constant="174" id="IcR-Ah-eOv"/>
-                            <constraint firstItem="NMX-WA-9fs" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="LDL-TG-GJD"/>
-                            <constraint firstItem="jxQ-aJ-f3w" firstAttribute="trailing" secondItem="NMX-WA-9fs" secondAttribute="trailing" constant="20" id="V2X-HR-5NU"/>
-                            <constraint firstItem="y9L-cE-kKo" firstAttribute="leading" secondItem="jxQ-aJ-f3w" secondAttribute="leading" constant="20" id="ngX-bG-AGO"/>
+                            <constraint firstItem="9R1-gA-wga" firstAttribute="top" secondItem="jxQ-aJ-f3w" secondAttribute="top" id="3Cu-5t-4GD"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="top" secondItem="9R1-gA-wga" secondAttribute="bottom" constant="8" id="9Ql-vV-k1k"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="leading" secondItem="9R1-gA-wga" secondAttribute="leading" id="Aol-3G-9Is"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="trailing" secondItem="FVM-Mc-gDd" secondAttribute="trailingMargin" id="jpF-8e-w4F"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="bottom" secondItem="jxQ-aJ-f3w" secondAttribute="bottom" constant="-2" id="m02-th-BPY"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="leading" secondItem="FVM-Mc-gDd" secondAttribute="leadingMargin" id="rLp-mZ-Nqq"/>
+                            <constraint firstItem="y9L-cE-kKo" firstAttribute="trailing" secondItem="9R1-gA-wga" secondAttribute="trailing" id="zrD-bQ-o4k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jxQ-aJ-f3w"/>
                     </view>
                     <navigationItem key="navigationItem" id="zTM-lY-7iX"/>
                     <connections>
-                        <outlet property="addressField" destination="NMX-WA-9fs" id="ymk-Xg-zb7"/>
+                        <outlet property="mapView" destination="WZN-cX-puK" id="yke-DP-4ai"/>
                         <outlet property="nextButton" destination="y9L-cE-kKo" id="nfR-4X-rXg"/>
                     </connections>
                 </viewController>
@@ -371,11 +370,12 @@
                                     <action selector="sendButtonAction:" destination="DlD-8d-nmV" eventType="touchUpInside" id="bHQ-fr-Cla"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
                                 <rect key="frame" x="20" y="279" width="374" height="312"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
