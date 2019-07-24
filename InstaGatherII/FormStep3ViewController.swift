@@ -24,7 +24,6 @@ class FormStep3ViewController: UIViewController {
     var searchController: UISearchController?
     var locationName: String!
     var locationID: String!
-//    var attributedString: NSMutableAttributedString?
     
 
     override func viewDidLoad() {
@@ -33,7 +32,6 @@ class FormStep3ViewController: UIViewController {
         
         setupSearchController()
         
-//        resultsViewController?.delegate = self
     }
     
     func setupSearchController() {
@@ -55,9 +53,6 @@ class FormStep3ViewController: UIViewController {
         self.event!.address = locationName
         self.event!.placeID = locationID
         let step4VC = segue.destination as! FormStep4ViewController
-        print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
-        print("https://www.google.com/maps/place/?q=place_id:\(event!.placeID!)")
-        print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
         step4VC.event = self.event
     }
 }
@@ -81,16 +76,6 @@ extension FormStep3ViewController: GMSAutocompleteResultsViewControllerDelegate 
         
         locationName = place.name!
         locationID = place.placeID!
-        
-        print(place.coordinate)
-//        print(place.placeID!)
-//        print(place.name!)
-//        print("https://www.google.com/maps/place/?q=place_id:\(place.placeID!)")
-        
-        locationName = place.name ?? ""
-//        attributedString = NSMutableAttributedString(string: locationName, attributes:[NSAttributedString.Key.link: URL(string: "https://www.google.com/maps/place/?q=place_id:\(placeID)")!])
-//        
-//        print(attributedString)
         
     }
     
