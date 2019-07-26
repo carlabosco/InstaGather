@@ -377,6 +377,29 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-8y-Mrf">
+                                <rect key="frame" x="20" y="722" width="185" height="28"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="XYt-WP-1bA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTX-NR-cRd">
+                                <rect key="frame" x="214" y="722" width="180" height="28"/>
+                                <color key="backgroundColor" red="0.97518080470000001" green="0.81464111800000005" blue="0.20001152159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="5Ng-jK-8kH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <state key="normal" title="Make a Reservation"/>
+                                <connections>
+                                    <segue destination="pdj-a7-uT8" kind="show" identifier="GoToReservation" id="ZFa-PZ-ds8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -384,11 +407,17 @@
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="4bh-a3-3Vu"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="150" id="5Wc-g4-HMR"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="top" secondItem="fle-aw-7Za" secondAttribute="top" constant="126" id="9Ll-AB-RVY"/>
+                            <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="VTX-NR-cRd" secondAttribute="bottom" constant="112" id="AO1-Kd-6ZD"/>
+                            <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="0ab-8y-Mrf" secondAttribute="bottom" constant="112" id="E9I-3j-xqB"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="tmu-mF-CrH" secondAttribute="leading" id="EVP-LE-oFc"/>
+                            <constraint firstItem="0ab-8y-Mrf" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="KO8-Eg-2o8"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="tmu-mF-CrH" secondAttribute="trailing" id="KlT-9w-JR9"/>
+                            <constraint firstItem="VTX-NR-cRd" firstAttribute="top" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="10" id="T4v-oE-hk1"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="Yhu-Wq-tea" secondAttribute="leading" id="c4M-ZF-3QB"/>
+                            <constraint firstItem="0ab-8y-Mrf" firstAttribute="top" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="10" id="f3o-Q3-Pzf"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" constant="20" id="jXP-r6-3De"/>
                             <constraint firstItem="tmu-mF-CrH" firstAttribute="top" secondItem="Yhu-Wq-tea" secondAttribute="bottom" constant="30" id="jlk-cc-uyK"/>
+                            <constraint firstItem="fle-aw-7Za" firstAttribute="trailing" secondItem="VTX-NR-cRd" secondAttribute="trailing" constant="20" id="ks9-Wu-IOP"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" id="vhc-e8-H4q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fle-aw-7Za"/>
@@ -402,6 +431,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oi-w9-xKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2818.840579710145" y="-95.089285714285708"/>
+        </scene>
+        <!--Reservation Table View Controller-->
+        <scene sceneID="3AL-TW-bzm">
+            <objects>
+                <tableViewController id="pdj-a7-uT8" customClass="ReservationTableViewController" customModule="InstaGatherII" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gif-lX-Lmb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YPH-hJ-9Am">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YPH-hJ-9Am" id="Wsz-Uf-n4T">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pdj-a7-uT8" id="oaV-m9-UeQ"/>
+                            <outlet property="delegate" destination="pdj-a7-uT8" id="fHJ-uf-k8k"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryV-Yn-owb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="-95"/>
         </scene>
     </scenes>
     <resources>

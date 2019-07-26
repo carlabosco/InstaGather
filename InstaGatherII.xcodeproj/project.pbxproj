@@ -23,6 +23,7 @@
 		11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F0C22CC64F000545917 /* FormStep1ViewController.swift */; };
 		11989F0F22CC652C00545917 /* FormStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F0E22CC652C00545917 /* FormStep2ViewController.swift */; };
 		11989F1122CC65A200545917 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11989F1022CC65A200545917 /* Event.swift */; };
+		11EE7D9222EA496B00732BEC /* ReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE7D9122EA496B00732BEC /* ReservationTableViewController.swift */; };
 		F812023875C73B5FE3134AB2 /* Pods_InstaGatherII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F4B44BE2D714B87899DFD /* Pods_InstaGatherII.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		11989F0C22CC64F000545917 /* FormStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep1ViewController.swift; sourceTree = "<group>"; };
 		11989F0E22CC652C00545917 /* FormStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStep2ViewController.swift; sourceTree = "<group>"; };
 		11989F1022CC65A200545917 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		11EE7D9122EA496B00732BEC /* ReservationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewController.swift; sourceTree = "<group>"; };
 		2F4F4B44BE2D714B87899DFD /* Pods_InstaGatherII.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGatherII.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4642C3463994F07B9686F1EC /* Pods-InstaGatherII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGatherII.debug.xcconfig"; path = "Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII.debug.xcconfig"; sourceTree = "<group>"; };
 		EE4B2F87925040ABCE82FC01 /* Pods-InstaGatherII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGatherII.release.xcconfig"; path = "Target Support Files/Pods-InstaGatherII/Pods-InstaGatherII.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				1193B93B22DD500C008159FB /* Contact.swift */,
 				1193B93D22DD5E4B008159FB /* Group.swift */,
 				1193B93F22DE6AD5008159FB /* GroupPickerViewControllerTableViewController.swift */,
+				11EE7D9122EA496B00732BEC /* ReservationTableViewController.swift */,
 			);
 			path = InstaGatherII;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				11989F1122CC65A200545917 /* Event.swift in Sources */,
 				1193B94022DE6AD5008159FB /* GroupPickerViewControllerTableViewController.swift in Sources */,
 				1114794B22D65BD700A572E8 /* FormStep5ViewController.swift in Sources */,
+				11EE7D9222EA496B00732BEC /* ReservationTableViewController.swift in Sources */,
 				1136511622D3D0BC007905E8 /* FormStep4ViewController.swift in Sources */,
 				11989F0D22CC64F000545917 /* FormStep1ViewController.swift in Sources */,
 				1193B93C22DD500C008159FB /* Contact.swift in Sources */,

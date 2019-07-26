@@ -118,16 +118,11 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
                 guestsPhones.append(phoneString! as! String)
                 
                     let realm = try! Realm()
-//                    var contacts = try! Realm().objects(Contact.self)
                     try! realm.write {
                         guests.append(newContact)
                         realm.add(guests)
                     }
                 
-//                guests.append(newContact)
-                print("added contact ***************************************\(newContact) added")
-//                    print(self.event!.isInvalidated)
-                print("***************************************\(guests)")
             }
         }
     
@@ -136,18 +131,16 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Entered segue")
-//        print(guests.isInvalidated)
         
         if (segue.identifier == "FormStep5ViewController") {
-//            print(guests.isInvalidated)
+
             self.event?.guests = guests
             self.event?.guestsNames = guestsNames
             self.event?.guestsPhones = guestsPhones
             let step5VC = segue.destination as! FormStep5ViewController
             step5VC.selectedGroups = self.selectedGroups
             step5VC.event = self.event
-//            step5VC.locationURL = URL(string: "https://www.google.com/maps/place/?q=place_id:\(place.placeID!)")
+
             
         }
         if (segue.identifier == "PickGroup") {

@@ -20,25 +20,9 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     var selectedGroups: [Group]?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //    ************    Generate GoogleCalendar url  **********
-        
-//        let calendarURL = """
-//        http://www.google.com/calendar/render?
-//        action=TEMPLATE
-//        &text="\(event!.name!)"
-//        &dates=20200127T224000/20140320T221500
-//        &location="\(event!.address!)"
-//        &trp=false
-//        &sprop=
-//        &sprop=name:"
-//        target="_blank" rel="nofollow"
-//        """
-//       print(URL(string: calendarURL)!)
-        //        **************************************
-        
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
@@ -122,4 +106,13 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "GoToReservation") {
+            
+//            self.event!.address = event!.address!
+//            print(event!.address!)
+            let reservationVC = segue.destination as! ReservationTableViewController
+            reservationVC.event = self.event
+    }
+}
 }
