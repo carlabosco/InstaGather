@@ -13,6 +13,8 @@ class ReservationTableViewController: UITableViewController {
     var event: Event?
     var restaurantArray = [NSDictionary]()
     var addressArray = Array<Any>()
+    var namesArray = Array<String>()
+    var urlsArray = Array<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +60,13 @@ class ReservationTableViewController: UITableViewController {
                 print(self.restaurantArray)
 //
                 for restaurant in self.restaurantArray {
-                    print(restaurant["name"])
-                    var restAddress = restaurant["address"]
-                    self.addressArray.append(restAddress)
+                    print(restaurant["name"] as Any)
+                    let restAddress = restaurant["address"]
+                    let restName = restaurant["name"]
+                    let restURL = restaurant["mobile_reserve_url"]
+                    self.addressArray.append(restAddress as Any)
+                    self.namesArray.append(restName as! String)
+                    self.urlsArray.append(restURL as! String)
 //                    print(restaurant)
                 }
                 
@@ -97,10 +103,12 @@ class ReservationTableViewController: UITableViewController {
 
 extension ReservationTableViewController {
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = self.addressArray[indexPath.row] as! String
+        cell.textLabel?.text = self.namesArray[indexPath.row] as! String
+        cell.detailTextLabel?.text = self.urlsArray[indexPath.row] as! String
         
         return cell
     }
