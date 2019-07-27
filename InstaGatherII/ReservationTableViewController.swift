@@ -70,21 +70,6 @@ class ReservationTableViewController: UITableViewController {
 //                    print(restaurant)
                 }
                 
-                
-//                let data = jsonResponse as! NSDictionary;
-//
-//                //value for key "bookings" will give you array
-//                if let restaurants = data.value(forKey: "restaurants") as? NSArray {
-//
-////                    let restaurantObj = restaurants[0] as! NSDictionary;
-////
-////                    var address = restaurantObj.value(forKey: "address");
-////                    var mobileReserve = restaurantObj.value(forKey: "mobile_reserve_url")
-////                    print(mobileReserve)
-////
-////                    let arrayAddresses = restaurants.value(forKeyPath: "address") as! NSArray
-////                    print(arrayAddresses)
-//                }
                
                 
             } catch let parsingError {
@@ -103,14 +88,24 @@ class ReservationTableViewController: UITableViewController {
 
 extension ReservationTableViewController {
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        
-        cell.textLabel?.text = self.namesArray[indexPath.row] as! String
-        cell.detailTextLabel?.text = self.urlsArray[indexPath.row] as! String
-        
+
+        cell.textLabel?.text = self.namesArray[indexPath.row]
+        cell.detailTextLabel?.text = self.urlsArray[indexPath.row]
+
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        let urlString = self.urlsArray[indexPath.row]
+        if let url = NSURL(string: urlString)
+        {
+            UIApplication.shared.openURL(url as URL)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
