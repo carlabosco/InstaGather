@@ -13,6 +13,9 @@ import MapKit
 
 class FormStep3ViewController: UIViewController {
     
+    
+    @IBOutlet weak var lblValidationMessage: UILabel!
+    
     @IBOutlet weak var addressField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
@@ -29,6 +32,7 @@ class FormStep3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
+        lblValidationMessage.isHidden = true
         
         setupSearchController()
         
@@ -54,6 +58,15 @@ class FormStep3ViewController: UIViewController {
         self.event!.placeID = locationID
         let step4VC = segue.destination as! FormStep4ViewController
         step4VC.event = self.event
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if let address = locationName, address.count > 0 {
+            return true
+        }
+        lblValidationMessage.isHidden = false
+        lblValidationMessage.text = "Please enter event location."
+        return false
     }
 }
 
