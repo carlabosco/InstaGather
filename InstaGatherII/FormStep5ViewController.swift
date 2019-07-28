@@ -36,11 +36,23 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
      
         summaryField.text = """
             Event: \(event?.name ?? "party") \n
-            Where: \(event!.address!) \n
-            Map: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(self.event!.placeID!)")!)\n
             When: \(event?.date ?? "today") \n
+            Where: \(event!.address!) \n
+            Open with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(self.event!.placeID!)")!)\n
             Guests: \(namesString ?? "")
         """
+        
+        let boldedWords = ["Event:", "When:", "Where:", "Open with GoogleMaps", "Guests:"]
+        let text: NSString = summaryField?.text as! NSString
+        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
+        
+        for word in boldedWords {
+            attributedText.addAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)], range: text.range(of: word))
+        }
+        
+        summaryField.attributedText = attributedText
+        
+        
         
         if (event?.guestsNames!.count)! > 1 && self.selectedGroups?.count == 0 {
             
@@ -48,7 +60,6 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
             
             try! realmFile.write {
                 realmFile.add(savedGroups)
-//                realmFile.add(guests)
                 realmFile.add(groups)
             }
             
@@ -67,10 +78,6 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
                     newGroup.name = alert.textFields?.first?.text
                     newGroup.groupContacts = self.event!.guests
                     
-//                    try! realmFile.write {
-//                        realmFile.add(newGroup)
-//                    }
-                    
                     try! realmFile.write {
                         _ = realmFile.create(Group.self, value: ["name": alert.textFields?.first?.text as Any, "groupContacts": self.event!.guests], update: false)
                     }
@@ -84,11 +91,20 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     @IBAction func sendButtonAction(_ sender: Any) {
         
         let messageVC = MFMessageComposeViewController()
-        messageVC.body = "Let's get together!\n\nEvent: \(event?.name ?? "party")\n\nWhen: \(event?.date ?? "today") \n\nWhere: \(event!.address!) \n\nOpen with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(event!.placeID!)")!) \n\nPlease RSVP by replying to this text.\n\nSent with InstaGather";
+        messageVC.body = """
+            Let's get together!\n\n
+            Event: \(event?.name ?? "party")\n\n
+            When: \(event?.date ?? "today") \n\n
+            Where: \(event!.address!) \n\n
+            Open with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(event!.placeID!)")!) \n\n
+            Please RSVP by replying to this text.\n\n
+            Sent with InstaGather
+        """;
         messageVC.recipients = event?.guestsPhones
         messageVC.messageComposeDelegate = self
         self.present(messageVC, animated: true, completion: nil)
     }
+    
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         switch (result) {
@@ -108,11 +124,9 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "GoToReservation") {
-            
-//            self.event!.address = event!.address!
-//            print(event!.address!)
             let reservationVC = segue.destination as! ReservationTableViewController
             reservationVC.event = self.event
+        }
     }
 }
-}
+

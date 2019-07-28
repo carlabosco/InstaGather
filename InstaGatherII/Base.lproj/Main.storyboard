@@ -378,25 +378,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-mF-CrH">
-                                <rect key="frame" x="20" y="182" width="374" height="312"/>
+                                <rect key="frame" x="20" y="182" width="374" height="433"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-8y-Mrf">
-                                <rect key="frame" x="20" y="722" width="185" height="28"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="XYt-WP-1bA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                <state key="normal" title="Exit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTX-NR-cRd">
-                                <rect key="frame" x="214" y="722" width="180" height="28"/>
+                                <rect key="frame" x="20" y="722" width="374" height="28"/>
                                 <color key="backgroundColor" red="0.97518080470000001" green="0.81464111800000005" blue="0.20001152159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="5Ng-jK-8kH"/>
@@ -410,22 +399,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lge-D7-ULv" firstAttribute="top" secondItem="tmu-mF-CrH" secondAttribute="bottom" constant="143" id="3as-85-KTW"/>
+                            <constraint firstItem="Lge-D7-ULv" firstAttribute="top" secondItem="tmu-mF-CrH" secondAttribute="bottom" constant="22" id="3as-85-KTW"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="4bh-a3-3Vu"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="150" id="5Wc-g4-HMR"/>
                             <constraint firstItem="Yhu-Wq-tea" firstAttribute="top" secondItem="fle-aw-7Za" secondAttribute="top" constant="51" id="9Ll-AB-RVY"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="VTX-NR-cRd" secondAttribute="bottom" constant="112" id="AO1-Kd-6ZD"/>
-                            <constraint firstItem="fle-aw-7Za" firstAttribute="bottom" secondItem="0ab-8y-Mrf" secondAttribute="bottom" constant="112" id="E9I-3j-xqB"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="tmu-mF-CrH" secondAttribute="leading" id="EVP-LE-oFc"/>
-                            <constraint firstItem="0ab-8y-Mrf" firstAttribute="leading" secondItem="fle-aw-7Za" secondAttribute="leading" constant="20" id="KO8-Eg-2o8"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="tmu-mF-CrH" secondAttribute="trailing" id="KlT-9w-JR9"/>
                             <constraint firstItem="VTX-NR-cRd" firstAttribute="top" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="10" id="T4v-oE-hk1"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="leading" secondItem="Yhu-Wq-tea" secondAttribute="leading" id="c4M-ZF-3QB"/>
-                            <constraint firstItem="0ab-8y-Mrf" firstAttribute="top" secondItem="Lge-D7-ULv" secondAttribute="bottom" constant="10" id="f3o-Q3-Pzf"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" constant="20" id="jXP-r6-3De"/>
                             <constraint firstItem="tmu-mF-CrH" firstAttribute="top" secondItem="Yhu-Wq-tea" secondAttribute="bottom" constant="8" id="jlk-cc-uyK"/>
                             <constraint firstItem="fle-aw-7Za" firstAttribute="trailing" secondItem="VTX-NR-cRd" secondAttribute="trailing" constant="20" id="ks9-Wu-IOP"/>
-                            <constraint firstItem="VTX-NR-cRd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ab-8y-Mrf" secondAttribute="trailing" constant="8" symbolic="YES" id="m24-LW-Jo1"/>
+                            <constraint firstItem="VTX-NR-cRd" firstAttribute="centerX" secondItem="6my-bt-J9n" secondAttribute="centerX" id="tx3-if-Eec"/>
                             <constraint firstItem="Lge-D7-ULv" firstAttribute="trailing" secondItem="Yhu-Wq-tea" secondAttribute="trailing" id="vhc-e8-H4q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fle-aw-7Za"/>
