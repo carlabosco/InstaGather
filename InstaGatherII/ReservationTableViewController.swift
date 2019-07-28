@@ -102,6 +102,7 @@ extension ReservationTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
         let urlString = self.urlsArray[indexPath.row]
+        
         if let url = NSURL(string: urlString)
         {
             UIApplication.shared.openURL(url as URL)
