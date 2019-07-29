@@ -48,26 +48,26 @@ class ReservationTableViewController: UITableViewController {
                     print(error?.localizedDescription ?? "Response Error")
                     return }
             do{
-                //here dataResponse received from a network request
+                
                 let jsonResponse = try JSONSerialization.jsonObject(with:
                     dataResponse) as? NSDictionary
-//                print("json resonse: \(jsonResponse)") //Response result
                 
                 if let restaurants = jsonResponse?["restaurants"] as? [NSDictionary] {
                     self.restaurantArray = restaurants
                 }
                 
                 print(self.restaurantArray)
-//
+
                 for restaurant in self.restaurantArray {
                     print(restaurant["name"] as Any)
                     let restAddress = restaurant["address"]
                     let restName = restaurant["name"]
                     let restURL = restaurant["mobile_reserve_url"]
+                    let restImage = restaurant["img_url"]
                     self.addressArray.append(restAddress as Any)
                     self.namesArray.append(restName as! String)
                     self.urlsArray.append(restURL as! String)
-//                    print(restaurant)
+
                 }
                 
                
@@ -107,6 +107,8 @@ extension ReservationTableViewController {
         {
             UIApplication.shared.openURL(url as URL)
         }
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

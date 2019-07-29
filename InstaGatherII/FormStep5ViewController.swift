@@ -42,15 +42,15 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
             Guests: \(namesString ?? "")
         """
         
-        let boldedWords = ["Event:", "When:", "Where:", "Open with GoogleMaps", "Guests:"]
-        let text: NSString = summaryField?.text as! NSString
-        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
-        
-        for word in boldedWords {
-            attributedText.addAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)], range: text.range(of: word))
-        }
-        
-        summaryField.attributedText = attributedText
+//        let boldedWords = ["Event:", "When:", "Where:", "Open with GoogleMaps", "Guests:"]
+//        let text: NSString = summaryField?.text as! NSString
+//        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
+//        
+//        for word in boldedWords {
+//            attributedText.addAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)], range: text.range(of: word))
+//        }
+//        
+//        summaryField.attributedText = attributedText
         
         
         
