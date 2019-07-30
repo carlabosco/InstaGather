@@ -18,45 +18,30 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var selectGroupButton: UIButton!
     
-//    let realm = try! Realm()
-//    var contacts = try! Realm().objects(Contact.self)
-    
     var event: Event?
     var guests = List<Contact>()
     var guestsNames = [String]()
     var guestsPhones = [String]()
-    
-//    var locationURL: URL?
-    
     var selectedGroups: [Group] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.contacts = realm.objects(Contact.self)
     }
     
     @IBAction func unwindToFormStep4(_ unwindSegue: UIStoryboardSegue) {
-         print("Entered unwind function +++++++++++++++++++++++++\(selectedGroups)")
-//        var selectedGroups: [Group] = []
+ 
         if let sourceViewController = unwindSegue.source as? GroupPickerViewControllerTableViewController {
             selectedGroups = sourceViewController.selectedGroups
         }
         
         for group in selectedGroups {
             for contact in group.groupContacts {
-                
-//                try! realm.write {
-                    guestsNames.append(contact.fullName!)
-                    guestsPhones.append(contact.phoneNumber!)
-//                    realm.add(contact)
-//                }
+                guestsNames.append(contact.fullName!)
+                guestsPhones.append(contact.phoneNumber!)
             }
         }
     }
-    
-    
     
     @IBAction func selectContacts(_ sender: Any) {
         
@@ -80,54 +65,39 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
         }
     }
     
-        func openContacts() {
-            let contactPicker = CNContactPickerViewController.init()
-            contactPicker.delegate = self as?  CNContactPickerDelegate
-            self.present(contactPicker, animated: true, completion: nil)
-        }
-    
-        func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-            picker.dismiss(animated: true)
-        }
-    
-        func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-            
-            print("Entered contactPicker function *******************\(selectedGroups)")
-            
-//            var guests = List<Contact>()
-//            let realm = try! Realm()
-////            var contacts = try! Realm().objects(Contact.self)
-//            try! realm.write {
-//                realm.add(selectedGroups)
-//                realm.add(guests)
-//            }
+    func openContacts() {
+        let contactPicker = CNContactPickerViewController.init()
+        contactPicker.delegate = self as?  CNContactPickerDelegate
+        self.present(contactPicker, animated: true, completion: nil)
+    }
 
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        picker.dismiss(animated: true)
+    }
+
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+
+        for contact in contacts {
             
-                for contact in contacts {
-                
-                let newContact = Contact()
-//                realm.add(newContact)
-                
-                newContact.fullName = "\(contact.givenName) \(contact.familyName)"
-                
-                let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
-                
-                newContact.phoneNumber = (phoneString! as! String)
-                let fullName = "\(contact.givenName) \(contact.familyName)"
-                guestsNames.append(fullName)
-                guestsPhones.append(phoneString! as! String)
-                
-                    let realm = try! Realm()
-                    try! realm.write {
-                        guests.append(newContact)
-                        realm.add(guests)
-                    }
-                
+            let newContact = Contact()
+
+            newContact.fullName = "\(contact.givenName) \(contact.familyName)"
+            
+            let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
+            
+            newContact.phoneNumber = (phoneString! as! String)
+            let fullName = "\(contact.givenName) \(contact.familyName)"
+            
+            guestsNames.append(fullName)
+            guestsPhones.append(phoneString! as! String)
+            
+            let realm = try! Realm()
+            try! realm.write {
+                guests.append(newContact)
+                realm.add(guests)
             }
         }
-    
-    
-    
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,9 +110,8 @@ class FormStep4ViewController: UIViewController, CNContactPickerDelegate {
             let step5VC = segue.destination as! FormStep5ViewController
             step5VC.selectedGroups = self.selectedGroups
             step5VC.event = self.event
-
-            
         }
+        
         if (segue.identifier == "PickGroup") {
             self.event?.guests = guests
             self.event?.guestsNames = guestsNames

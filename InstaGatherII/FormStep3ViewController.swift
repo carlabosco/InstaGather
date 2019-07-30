@@ -53,7 +53,6 @@ class FormStep3ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        self.event?.address = addressField.text
         self.event!.address = locationName
         self.event!.placeID = locationID
         let step4VC = segue.destination as! FormStep4ViewController

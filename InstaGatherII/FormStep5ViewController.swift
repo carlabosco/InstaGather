@@ -19,19 +19,13 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
     var event: Event?
     var selectedGroups: [Group]?
     
-    
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        super.viewDidLoad()
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let realmFile = try! Realm()
         let savedGroups = realmFile.objects(Group.self)
-        print(savedGroups)
-        
-   
-        
         let namesString = event?.guestsNames?.joined(separator: ", ")
      
         summaryField.text = """
@@ -41,17 +35,6 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
             Open with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(self.event!.placeID!)")!)\n
             Guests: \(namesString ?? "")
         """
-        
-//        let boldedWords = ["Event:", "When:", "Where:", "Open with GoogleMaps", "Guests:"]
-//        let text: NSString = summaryField?.text as! NSString
-//        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
-//        
-//        for word in boldedWords {
-//            attributedText.addAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)], range: text.range(of: word))
-//        }
-//        
-//        summaryField.attributedText = attributedText
-        
         
         
         if (event?.guestsNames!.count)! > 1 && self.selectedGroups?.count == 0 {

@@ -11,41 +11,28 @@ import RealmSwift
 
 
 class GroupPickerViewControllerTableViewController: UITableViewController {
-    
   
     @IBAction func doneButton(_ sender: Any) {
         performSegue(withIdentifier: "BackFromSelectedGroups", sender: self)
     }
     
     var event: Event?
-//    let realm = try! Realm()
     var groups = try! Realm().objects(Group.self)
-    
-   
-    
-//    var group:Group?
     var selectedGroups: [Group] = []
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.groups = realm.objects(Group.self)
-        
     }
 }
 
 extension GroupPickerViewControllerTableViewController {
     
-    override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.groups.count
     }
     
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-
         let group = groups[indexPath.row]
         cell.textLabel?.text = group.name
         
@@ -61,23 +48,21 @@ extension GroupPickerViewControllerTableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
         selectedGroups.append(self.groups[indexPath.row])
     }
-    
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             let group = groups[indexPath.row]
-                print(group)
-                let realm = try! Realm()
-                let stored = realm.objects(Group.self)
-                try! realm.write {
-                    realm.delete(stored)
-                }
-                self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            let realm = try! Realm()
+            let stored = realm.objects(Group.self)
+            
+            try! realm.write {
+                realm.delete(stored)
             }
-        
+            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
     
     
