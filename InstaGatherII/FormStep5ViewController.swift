@@ -76,11 +76,11 @@ class FormStep5ViewController: UIViewController, MFMessageComposeViewControllerD
         let messageVC = MFMessageComposeViewController()
         messageVC.body = """
             Let's get together!\n\n
-            Event: \(event?.name ?? "party")\n\n
-            When: \(event?.date ?? "today") \n\n
-            Where: \(event!.address!) \n\n
-            Open with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(event!.placeID!)")!) \n\n
-            Please RSVP by replying to this text.\n\n
+            Event: \(event?.name ?? "party")\n
+            When: \(event?.date ?? "today") \n
+            Where: \(event!.address!) \n
+            Open with GoogleMaps: \(URL(string: "https://www.google.com/maps/search/?api=1&query=0&query_place_id=\(event!.placeID!)")!) \n
+            Please RSVP by replying to this text.\n
             Sent with InstaGather
         """;
         messageVC.recipients = event?.guestsPhones
